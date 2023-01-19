@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.library'
-    id 'maven-publish'
 }
 
 android {
@@ -25,18 +24,4 @@ android {
 }
 
 dependencies {
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-
-                groupId = 'jalpa.yadav'
-                artifactId = 'MyTestLib'
-                version = '1.0.0'
-            }
-        }
-    }
 }
