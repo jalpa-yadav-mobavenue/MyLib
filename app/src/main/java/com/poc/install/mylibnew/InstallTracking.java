@@ -1,4 +1,4 @@
-package com.poc.install.mylibrary;
+package com.poc.install.mylibnew;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

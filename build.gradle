@@ -1,42 +1,9 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-    id 'com.android.library'
-    id 'maven-publish'
+    id 'com.android.application' version '7.2.0' apply false
+    id 'com.android.library' version '7.2.0' apply false
 }
 
-android {
-    compileSdk 32
-
-    defaultConfig {
-        minSdk 21
-        targetSdk 32
-        consumerProguardFiles "consumer-rules.pro"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-}
-
-dependencies {
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-
-                groupId = 'com.github.JoelKanyi'
-                artifactId = 'kenyan-counties'
-                version = '1.0.0'
-            }
-        }
-    }
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
